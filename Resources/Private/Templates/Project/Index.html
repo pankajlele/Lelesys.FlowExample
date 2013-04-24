@@ -1,0 +1,25 @@
+<f:layout name="Default" />
+
+<f:section name="Title">A list of projects</f:section>
+
+<f:section name="Content">
+	<table>
+		<f:if condition="{projects}">
+			<f:then>
+				<tr>
+					<td>Project Name</td>
+					<td>Number of tasks assigned</td>
+				</tr>
+				<f:for each="{projects}" as="project">
+					<tr>
+						<td>{project.project.title}</td>
+						<td>{project.taskCount}</td>
+					</tr>
+				</f:for>
+			</f:then>
+			<f:else>
+				<tr><td>No projects created yet.</td><tr>
+			</f:else>
+		</f:if>
+	</table>
+</f:section>
